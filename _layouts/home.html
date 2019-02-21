@@ -1,0 +1,35 @@
+---
+layout: default
+---
+
+<div class="home">
+  {%- if page.title -%}
+    <h1 class="page-heading">{{ page.title }}</h1>
+  {%- endif -%}
+
+  {{ content }}
+
+  {%- if site.posts.size > 0 -%}
+<!--    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2> -->
+    <p class="post-list-heading">[barmaley@barmaley github]$ ls -l barmale0x79.github.io/posts</p>
+    <ul class="post-list">
+
+      {%- for post in site.posts -%}
+      <li>
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y %R" -%}
+<!--        <p>-rw-r--r--   1 barmaley  staff  {{ post.date | date: date_format }}</p>
+-->
+          <a class="post-meta"  href="{{ post.url | relative_url }}">
+            -rw-r--r-- 1 barmaley staff &nbsp {{ post.date | date: date_format }}&nbsp;&nbsp;&nbsp{{ post.title | escape }}
+          </a>
+        {%- if site.show_excerpts -%}
+          {{ post.excerpt }}
+        {%- endif -%}
+      </li>
+      {%- endfor -%}
+    </ul>
+
+<!--    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p> -->
+  {%- endif -%}
+
+</div>

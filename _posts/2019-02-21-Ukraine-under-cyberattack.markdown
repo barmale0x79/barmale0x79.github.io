@@ -740,7 +740,6 @@ Plugins are launched by injecting into the process explorer.exe, which Smoke lau
 
 then at entrypoint of explorer.exe jump to shellcode is written and the process starts
 <img class="code_image" src="/assets/images/plugin-jmp.png"/>
-plugin-jmp
 
 The analysis of the Smoke loader code itself can be completed and proceed to the analysis of plug-ins.
 
@@ -1015,12 +1014,12 @@ The combination of these two factors gives a confident assumption of an attack o
 I also wanted to add that in attacks of this level, the real ip address of the command center is hidden behind a chain of proxy servers to which the loader is trying to connect.
 
 At the time of this writing, the IP addresses of the proxy servers for the command center were
-
+<pre>
 nslookup aviatorssm.bit 51.254.25.115
 5.23.55.67 - Russia
 176.53.161.111 - Russia
 89.223.92.75 - Russia
-
+</pre>
 These proxies change periodically, but most of them are located in Russia.
 
 This is another indirect factor, the attacks precisely on Ukraine.
